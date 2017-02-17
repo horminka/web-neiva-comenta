@@ -1,0 +1,64 @@
+<div ng-if="esperando">
+  <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+</div>
+
+<div class="row" ng-if="!esperando">
+
+  <div class="text-center">
+    <h1>{{ topic.boardName }}</h1>
+    <p>{{ topic.boardDescription }}</p>
+    <p><a href="" ui-sref="showBoard({boardId: topic.boardId})">[volver]</a>
+  </div>
+
+  <p class="crear-topic"><a href="" ui-sref="newPost({topicId: topic.id})">[Comentar]</a></p>
+
+      <div class="panel panel-default panel-topic">
+        <div class="panel-heading">
+          <h3 class="panel-title"><strong>{{ topic.title }}</strong></h3>
+        </div>
+        <div class="panel-body">
+          <div class="row primera-fila">
+            <div class="col-sm-2">
+              <a href="{{ topic.image }}" target="_blank"><img class="img-responsive" src="{{ topic.image }}" alt="{{ topic.title }}" /></a>
+            </div>
+            <div class="col-sm-10">
+              <p ng-if="width < 768" class="fecha"><small>{{ topic.createdAt | date:'dd MMM yyyy h:mm a'}}</small></p>
+              <ul class="opciones">
+                <li ng-if="width >= 768"class="fecha"><small>{{ topic.createdAt | date:'dd MMM yyyy h:mm a'}} - </small></li>
+                <li><a href="mailto:admin@neivacomenta.com?subject=[Report] Topic {{ topic.id }}">[reportar]</a></li>
+              </ul>
+              <p>{{ topic.content }}</p>
+            </div>
+          </div>
+          <div class="row" ng-repeat="post in topic.posts">
+            <div class="panel panel-default panel-post">
+              <div class="panel-body">
+                <!-- cuando el post tiene imagen -->
+                <div class="row" ng-if="post.image != 'no-imagen'">
+                  <div class="col-sm-2">
+                    <a href="{{ post.image }}" target="_blank"><img class="img-responsive" src="{{ post.image }}" alt="" /></a>
+                  </div>
+                  <div class="col-sm-10">
+                    <p ng-if="width < 768" class="fecha"><small>{{ post.createdAt | date:'dd MMM yyyy h:mm a'}}</small></p>
+                    <ul class="opciones">
+                      <li ng-if="width >= 768"class="fecha"><small>{{ post.createdAt | date:'dd MMM yyyy h:mm a'}} - </small></li>
+                      <li><a href="mailto:admin@neivacomenta.com?subject=[Report] Post {{ post.id }}">[reportar]</a></li>
+                    </ul>
+                    <p>{{ post.content }}</p>
+                  </div>
+                </div>
+                <!-- cuando el post no tiene imagen -->
+                <p ng-if="width < 768 && post.image == 'no-imagen'" class="fecha"><small>{{ post.createdAt | date:'dd MMM yyyy h:mm a'}}</small></p>
+                <ul ng-if="post.image == 'no-imagen'" class="opciones">
+                  <li ng-if="width >= 768"class="fecha"><small>{{ post.createdAt | date:'dd MMM yyyy h:mm a'}} - </small></li>
+                  <li><a href="mailto:admin@neivacomenta.com?subject=[Report] Post {{ post.id }}">[reportar]</a></li>
+                </ul>
+                <p ng-if="post.image == 'no-imagen'">{{ post.content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center;"><a href="" ui-sref="showBoard({boardId: topic.boardId})">[volver]</a><a href="" ui-sref="newPost({topicId: topic.id})"> [comentar]</a></p>
+</div>

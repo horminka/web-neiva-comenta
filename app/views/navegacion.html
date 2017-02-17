@@ -1,0 +1,6 @@
+<div ng-if="esperando">
+  <p>esperando...</p>
+</div>
+<li ui-sref-active="active" ng-if="!esperando" ui-sref="showBoard({boardId: board.id})" ng-repeat="board in boards">
+  <a href="#">{{ board.name }}</a>
+</li>

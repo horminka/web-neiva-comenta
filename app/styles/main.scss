@@ -1,0 +1,304 @@
+//== Colors
+
+$verde: #006900;
+$amarillo: #FFDD00;
+$blanco: #FFFFFF;
+$negro: #000000;
+$rojo: #DD0000;
+
+$navbar-height:                    70px !default;
+$navbar-border-radius:             0;
+$navbar-collapse-max-height:       340px !default;
+
+$navbar-default-color:             $blanco !default;
+$navbar-default-bg:                $verde !default;
+$navbar-default-border:            lighten($navbar-default-bg, 5%) !default;
+
+// Navbar links
+$navbar-default-link-color:                $blanco !default;
+//$navbar-default-link-hover-color:          darken($navbar-default-link-color, 10%) !default;
+$navbar-default-link-hover-color:          $amarillo !default;
+$navbar-default-link-hover-bg:             transparent !default;
+//$navbar-default-link-active-color:         darken($navbar-default-link-color, 13%) !default;
+$navbar-default-link-active-color:         $amarillo !default;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 5%) !default;
+$navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color !default;
+//$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-color:         $amarillo !default;
+$navbar-default-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           lighten($navbar-default-bg, 10%) !default;
+$navbar-default-toggle-icon-bar-bg:        #fff !default;
+$navbar-default-toggle-border-color:       #ddd !default;
+
+$dropdown-link-hover-bg:         darken($navbar-default-bg, 5%) !default;
+$dropdown-bg:                    $navbar-default-bg !default;
+$dropdown-link-color:                    $blanco;
+$dropdown-link-hover-color: $amarillo;
+$dropdown-link-active-bg:         darken($navbar-default-bg, 5%) !default;
+
+$text-color: #000;
+
+$list-group-bg:                 $verde !default;
+$list-group-border:             $verde !default;
+$list-group-border-radius:      0 !default;
+
+$btn-default-color:              $blanco !default;
+$btn-default-bg:                 $verde !default;
+$btn-default-border:             $verde !default;
+
+$btn-info-color:              $negro !default;
+$btn-info-bg:                 $blanco !default;
+$btn-info-border:             $negro !default;
+
+$link-color:            $rojo !default;
+
+$panel-default-border:        $verde !default;
+$panel-default-heading-bg:    $verde !default;
+$panel-default-text:          $blanco !default;
+
+$input-color:                    $negro !default;
+
+// bower:scss
+@import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+body {
+  padding-top: 70px;
+}
+
+.navbar {
+  font-size: 16px;
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+.list-group {
+  padding-right: 0;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.list-group-item:hover {
+  background-color: darken($verde, 5%);
+}
+.list-group-item {
+  color: #fff;
+  a {
+    font-size: 24px;
+    color: #fff;
+  }
+  a:hover {
+    color: $amarillo;
+    text-decoration: none;
+  }
+}
+
+.imagen-portada {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 600px;
+  }
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.dropdown-toggle:hover {
+  background-color: darken($verde, 5%);
+}
+
+.open > .btn-default.dropdown-toggle:hover,
+.open > .btn-default.dropdown-toggle:focus {
+  background-color: darken($verde, 5%);
+}
+.dropdown-toggle:focus {
+  background-color: darken($verde, 5%);
+}
+
+.dropdown-menu {
+  width: 100%;
+}
+
+a {
+  font-weight: bold;
+}
+
+.crear-topic {
+  text-align: right;
+  padding-right: 10px;
+}
+
+hr {
+  border-style: solid;
+  border-color: lighten($verde, 5%);
+  width: 97.5%;
+}
+
+.panel-topic {
+  margin: auto;
+  width: 97.5%;
+  margin-bottom: 15px;
+}
+.panel-body {
+  word-wrap: break-word;
+  .primera-fila {
+    padding-bottom: 15px;
+  }
+  img {
+    max-height: 100px;
+    margin: auto;
+  }
+  .panel-post {
+    margin: auto;
+    margin-bottom: 8px;
+    width: 97.5%;
+  }
+}
+
+.fecha {
+  color: darken($blanco, 60%);
+}
+
+.opciones {
+  text-align: right;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline;
+  }
+}
+
+@media (max-width: 767px) {
+  .fecha {
+    margin-bottom: 0px;
+  }
+  .fecha, .opciones {
+    text-align: center;
+  }
+}
+
+// Nuevo Topic
+.botones {
+  padding-left: 15px;
+  .btn-info {
+    margin-left: 10px;
+  }
+}
+.disclaimer {
+  padding-left: 15px;
+  color: $rojo;
+}
+
+
+/* Promise Buttons */
+/* Styles for old versions of IE */
+.btn-spinner {
+  font-family: sans-serif;
+  font-weight: 100;
+}
+/* :not(:required) hides this rule from IE9 and below */
+.btn-spinner:not(:required) {
+  -webkit-animation: three-quarters 1250ms infinite linear;
+  -moz-animation: three-quarters 1250ms infinite linear;
+  -ms-animation: three-quarters 1250ms infinite linear;
+  -o-animation: three-quarters 1250ms infinite linear;
+  animation: three-quarters 1250ms infinite linear;
+  border: 3px solid white;
+  border-right-color: transparent;
+  border-radius: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 18px;
+  height: 18px;
+}
+.btn-spinner:not(:required) {
+  margin-left: -22px;
+  opacity: 0;
+  transition: 0.4s margin ease-out, 0.2s opacity ease-out;
+}
+.is-loading .btn-spinner {
+  transition: 0.2s margin ease-in, 0.4s opacity ease-in;
+  margin-left: 5px;
+  opacity: 1;
+}
+@-webkit-keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* /Promise Buttons */

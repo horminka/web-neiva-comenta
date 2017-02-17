@@ -1,0 +1,26 @@
+<div ng-if="esperando">
+  esperando...
+</div>
+
+<div ng-if="!esperando" class="row">
+  <ul class="list-group col-md-4 col-sm-12" ng-if="width > 980">
+    <li class="list-group-item" ui-sref="showBoard({boardId: board.id})" ng-repeat="board in boards">
+      <a href="">{{ board.name }}</a>
+      <p>{{ board.description }}</p>
+    </li>
+  </ul>
+  <div class="btn-group btn-block" ng-if="width < 768">
+    <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Muros <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li class="list-group-item" ui-sref="showBoard({boardId: board.id})" ng-repeat="board in boards">
+        <a href="">{{ board.name }}</a>
+        <p>{{ board.description }}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="imagen-portada col-md-8">
+    <img class="img-responsive" src="images/imagen.jpg" alt="" />
+  </div>
+</div>
