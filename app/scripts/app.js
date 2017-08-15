@@ -25,7 +25,6 @@ app.constant('Options', {
   //baseUrl: 'http://192.168.1.5:9000',
   baseUrl: 'http://localhost:9000',
   //apiUrl : 'http://localhost:3000',
-  //apiUrl : 'http://192.168.1.5:3000',
   apiUrl : 'https://neivacomentapi.herokuapp.com/',
 });
 
