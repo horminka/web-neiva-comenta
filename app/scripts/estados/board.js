@@ -124,10 +124,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
                        method: 'POST',
                        url: 'https://api.imgur.com/3/image',
                        headers: {
-                         //'Accept': 'application/json',
                          'Authorization': 'Client-ID 54b31582e98cdfa',
                        },
-                       //data: { image: 'http://www.horminka.org/img/logo.jpg' }
                        data: { image: $scope.nuevoTopic.image }
                       }
 
@@ -138,35 +136,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
                           console.log('falló')
                           console.log(response)
                       });
-                        //var deferred = $q.defer()
-                        //if ($scope.nuevaEmpresa.imagen && $scope.nuevaEmpresa.imagen.size) {
-                          //utils.subirArchivoCloudinary($scope.nuevaEmpresa.imagen, 'empresas').then(
-                            //function(response) {
-                              //$scope.nuevaEmpresa.imagen = response.public_id
-                              //$uibModalInstance.close($scope.nuevaEmpresa)
-                              //guardar()
-                            //},
-                            //function(response) {
-                              //$scope.nuevaEmpresa.imagen = "empresas/empresa"
-                              //guardar()
-                              //$uibModalInstance.close($scope.nuevaEmpresa)
-                            //}
-                          //)
-                        //}
-
-                        //function guardar() {
-                          //$scope.nuevaEmpresa.$save().$asPromise().then(
-                            //function(_e) {
-                              //deferred.resolve(_e)
-                              //swal("¡Empresa creada!", "Se creó la empresa " + $scope.nuevaEmpresa.nombre, "success")
-                            //},
-                            //function(_e) {
-                              //deferred.reject(_e)
-                              //swal("No se pudo crear la empresa " + $scope.nuevaEmpresa.nombre, JSON.stringify(_e.$response.data), "error")
-                            //})
-                        //}
-
-                        //return deferred.promise
                       }
 
                       $scope.cancelar = function() {
