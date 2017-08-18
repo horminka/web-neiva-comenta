@@ -71,5 +71,5 @@
 
   <p class="text-center" ng-if="board.topics.length == 0">No hay temas :(</p>
 
-  <p style="text-align: center;"><a href="" ui-sref="indexBoards">[volver]</a><a href="" ng-click="crearTopic()"> [Crear Tema Nuevo]</a></p>
+  <p style="text-align: center;"><a href="" ui-sref="indexBoards">[volver]</a><a href="#" ui-sref="newTopic({boardId: board.id})"> [Crear Tema Nuevo]</a></p>
 </div>
